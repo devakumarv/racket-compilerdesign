@@ -1,0 +1,14 @@
+#lang racket
+( define stack empty )
+( define ( push x )
+  ( set! stack ( append stack ( list x ) ) ) )
+( define pop ( reverse stack ) )
+  ( define result ( car pop ) )
+    ( set! stack ( reverse ( cdr pop ) ) ) 
+     result 
+     
+( push "abc" )
+( push "efg" )
+( push "ijk" )
+pop
+display stack 

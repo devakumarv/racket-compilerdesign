@@ -1,0 +1,29 @@
+#lang racket
+
+(define (CHEESE money chs)
+  (if (money = 0) 0
+      (if (money < 1.50) display "unfortunately we can not buy anything" 
+         (if (chs < 1) 
+             (CHEESE (money - 1.50)(chs + 1))
+             chs))))
+             
+(define (MILK money mlk)
+  (if (money = 0) 0
+      (if (money < 1.50) display "unfortunately we can not buy anything" 
+         (if (mlk < 2) 
+             (MILK (money - 1.50)(mlk + 1))
+             mlk))))
+             
+(define (BREAD money brd)
+  (if (money = 0) 0
+      (if (money < 1.50) display "unfortunately we can not buy anything"
+         (if (brd < 2) 
+             (BREAD (money - 1.50)(brd + 1))
+             brd))))     
+  
+display "Amount of Money (in dollars)?"
+( define money read )
+
+display "Cheese: " (CHEESE money 0)
+display "Milk: " (MILK money 0)
+display "Bread: " (BREAD money 0)
